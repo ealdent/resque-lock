@@ -49,7 +49,7 @@ module Resque
       end
 
       def before_enqueue_lock(*args)
-        Resque.redis.setnx(lock(*args), true)
+        Resque.redis.setnx(lock(*args), Time.now.utc)
       end
 
       def around_perform_lock(*args)
