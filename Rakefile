@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 def command?(command)
   system("type #{command} > /dev/null")
